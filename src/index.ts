@@ -1,7 +1,8 @@
-import { Hono } from 'hono'
+import { faker } from "@faker-js/faker";
+import { Hono } from "hono";
 
-const app = new Hono()
+const app = new Hono();
 
-app.get('/', (c) => c.text('Hello Hono!'))
+app.get("/", (c) => c.text(faker.animal.dog()));
 
-export default app
+export default app;

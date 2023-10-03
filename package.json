@@ -4,10 +4,14 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.1.0",
+    "@libsql/client": "^0.3.5",
+    "drizzle-orm": "^0.28.6",
     "hono": "^3.7.2"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230914.0",
+    "drizzle-kit": "^0.19.13",
     "wrangler": "^3.9.0"
   }
 }
