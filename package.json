@@ -4,7 +4,8 @@
     "deploy": "wrangler deploy --minify src/index.ts",
     "db:gen": "drizzle-kit generate:sqlite",
     "db:push": "drizzle-kit push:sqlite",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "d1:gen": "wrangler d1 execute hono-example --file=./drizzle/0001_milky_nico_minoru.sql"
   },
   "dependencies": {
     "@libsql/client": "^0.3.5",

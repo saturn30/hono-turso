@@ -6,9 +6,10 @@ import {
   randPhoneNumber,
   randUserName,
 } from "@ngneat/falso";
+import { DrizzleD1Database } from "drizzle-orm/d1";
 
 export class UserRepository {
-  constructor(private db: LibSQLDatabase) {}
+  constructor(private db: LibSQLDatabase | DrizzleD1Database) {}
 
   getAll = () => {
     return this.db.select().from(users);
