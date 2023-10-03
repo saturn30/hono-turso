@@ -7,8 +7,8 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.1.0",
     "@libsql/client": "^0.3.5",
+    "@ngneat/falso": "^7.1.1",
     "dotenv": "^16.3.1",
     "drizzle-orm": "^0.28.6",
     "hono": "^3.7.2"

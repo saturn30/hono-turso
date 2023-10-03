@@ -1,6 +1,11 @@
 import { LibSQLDatabase } from "drizzle-orm/libsql";
 import { users } from "../../schema";
-import { faker } from "@faker-js/faker";
+import {
+  randEmail,
+  randPastDate,
+  randPhoneNumber,
+  randUserName,
+} from "@ngneat/falso";
 
 export class UserRepository {
   constructor(private db: LibSQLDatabase) {}
@@ -11,10 +16,10 @@ export class UserRepository {
 
   create = () => {
     return this.db.insert(users).values({
-      name: faker.person.fullName(),
-      email: faker.internet.email(),
-      phone: faker.phone.number(),
-      created_at: faker.date.anytime(),
+      name: randUserName(),
+      email: randEmail(),
+      phone: randPhoneNumber(),
+      created_at: randPastDate(),
     });
   };
 }
