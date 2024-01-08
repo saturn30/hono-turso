@@ -10,7 +10,9 @@ app.get("/users/create", async (c) => {
 });
 
 app.get("/users", async (c) => {
-  return c.json(await getTursoDB(c.env).user.getAll());
+  const start = Date.now();
+  const result = await getTursoDB(c.env).user.getAll();
+  return c.json({ time: Date.now() - start, result });
 });
 
 app.get("/d1/users/create", async (c) => {
@@ -19,7 +21,12 @@ app.get("/d1/users/create", async (c) => {
 });
 
 app.get("/d1/users", async (c) => {
-  return c.json(await getD1DB(c.env).user.getAll());
+  const start = Date.now();
+  const result = await getD1DB(c.env).user.getAll();
+  return c.json({
+    time: Date.now() - start,
+    result,
+  });
 });
 
 app.get("/", (c) => c.text(randAnimal()));
